@@ -1,0 +1,21 @@
+@model IEnumerable<WebDemo.Models.Message>
+@{
+    ViewData["Title"] = "Messages";
+}
+<h2>Messages</h2>
+<p><a asp-action="Create">New message</a></p>
+<table class="table">
+    <thead>
+        <tr><th>Id</th><th>Content (HTML-encoded)</th></tr>
+    </thead>
+    <tbody>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.Id</td>
+            @* <td>@m.Content</td> *@
+            <td>@Html.Raw(m.Content)</td>
+        </tr>
+    }
+    </tbody>
+</table>

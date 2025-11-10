@@ -1,0 +1,13 @@
+@model WebDemo.Models.Message
+@{
+    ViewData["Title"] = "Create";
+}
+<h2>Create a Message</h2>
+<form asp-action="Create" method="post">
+    <div>
+        <label asp-for="Content"></label><br />
+        <textarea asp-for="Content" rows="3" cols="60"></textarea>
+        <span asp-validation-for="Content" class="text-danger"></span>
+    </div>
+    <button type="submit">Save</button>
+</form>
